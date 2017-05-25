@@ -25,8 +25,6 @@ class ActorsController < ApplicationController
     @actor.bio = params[:bio]
     @actor.image_url = params[:image_url]
 
-    @character.name = params[:char_name]
-
     save_status = @actor.save
 
     if save_status == true
