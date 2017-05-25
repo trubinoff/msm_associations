@@ -40,7 +40,7 @@
         <% end %>
       </ul>
 
-<!-- list of actor names (and character names) in movie -->
+      <!-- list of actor names (and character names) in movie -->
       <ul>
         <% @movie.characters.each do |character| %>
         <li><%= character.actor.name %>
@@ -88,3 +88,32 @@
           Movie
         </label>
       </div>
+
+      <input type="text" id="movie_id" name="movie_id" class="form-control" value="<%= @movie.id %>">
+
+
+      <!-- Label and input for actor_id -->
+      <div class="form-group">
+        <label for="actor_id" class="control-label">
+          Actor
+        </label>
+
+
+
+        <%= select_tag(:actor_id, options_from_collection_for_select(Actor.all, :id, :name), :class => "form-control") %>
+
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+      </div>
+
+      <button class="btn btn-success">
+        Create Character
+      </button>
+    </form>
+  </div>
+</div>

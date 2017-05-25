@@ -68,3 +68,29 @@
           Movie
         </label>
       </div>
+
+      <%= select_tag(:movie_id, options_from_collection_for_select(Movie.all, :id, :title), :class => "form-control") %>
+
+      <!-- Label and input for actor_id -->
+      <div class="form-group">
+        <label for="actor_id" class="control-label">
+          Actor
+        </label>
+
+        <input type="text" id="actor_id" name="actor_id" class="form-control" value="<%= @actor.id %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="char_name" class="control-label">
+          Name
+        </label>
+        
+      </div>
+
+      <button class="btn btn-success">
+        Create Character
+      </button>
+    </form>
+  </div>
+</div>
